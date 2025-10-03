@@ -1,0 +1,13 @@
+services:
+  fakefluxserver:
+    image: dottgonzo/fakeh264fluxserver:master
+    ports:
+      - "8554:8554"
+      - "1935:1935"
+      - "8889:8889"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
